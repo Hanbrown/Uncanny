@@ -5,15 +5,10 @@ import numpy as np
 
 img = cv.imread("photos/bowling.jpg")
 
-# cv.imshow("Tracks", img)
-
-
 grey = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-# cv.imshow("Greyscale", grey)
 
 # Blur
 blur = cv.GaussianBlur(img, (5, 5), cv.BORDER_DEFAULT)
-# cv.imshow("Blur", blur)
 
 # Edge Cascade (Canny)
 canny = cv.Canny(img, 100, 200)
@@ -62,10 +57,5 @@ for line in lines:
     cv.line(img, (x1, y1), (x2, y2), color, 1)
 
 cv.imshow("Hough", img)
-
-
-
-# dilated = cv.erode(canny, (3, 3), iterations=1)
-# cv.imshow("Dilated", dilated[50:200, 200:400])
 
 cv.waitKey(0)
